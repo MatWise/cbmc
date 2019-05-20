@@ -41,6 +41,7 @@ OBJ += ../ansi-c/ansi-c$(LIBEXT) \
       ../xmllang/xmllang$(LIBEXT) \
       ../assembler/assembler$(LIBEXT) \
       ../solvers/solvers$(LIBEXT) \
+      ../structured-text/structured-text$(LIBEXT) \
       ../util/util$(LIBEXT) \
       ../json/json$(LIBEXT)
 

@@ -162,6 +162,7 @@ cprover_default_properties(
     linking
     pointer-analysis
     solvers
+    structured-text
     symtab2gb
     testing-utils
     unit

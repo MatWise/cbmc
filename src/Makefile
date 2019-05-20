@@ -20,6 +20,7 @@ DIRS = analyses \
        memory-analyzer \
        pointer-analysis \
        solvers \
+       structured-text \
        symtab2gb \
        util \
        xmllang \
@@ -60,7 +61,7 @@ cpp.dir: ansi-c.dir linking.dir
 
 languages: util.dir langapi.dir \
            cpp.dir ansi-c.dir xmllang.dir assembler.dir \
-           jsil.dir json.dir json-symtab-language.dir
+           jsil.dir json.dir json-symtab-language.dir structured-text.dir
 
 solvers.dir: util.dir
 

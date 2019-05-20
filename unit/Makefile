@@ -155,6 +155,7 @@ CPROVER_LIBS =../src/ansi-c/ansi-c$(LIBEXT) \
               ../src/assembler/assembler$(LIBEXT) \
               ../src/analyses/analyses$(LIBEXT) \
               ../src/solvers/solvers$(LIBEXT) \
+              ../src/structured-text/structured-text$(LIBEXT) \
               $(BMC_DEPS)
               # Empty last line
 
