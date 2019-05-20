@@ -1,0 +1,18 @@
+CORE
+main.awl
+--show-parse-tree
+^EXIT=0$
+^SIGNAL=0$
+^Name: "Mul_DInt"$
+^Version: 0[.]1$
+^  \* type: structured_text_dint$
+^  \* identifier: "I0[.]0"$
+^  \* identifier: "I0[.]1"$
+^  \* identifier: "O0[.]0"$
+^structured_text_load	"I0[.]0"$
+^structured_text_load	"I0[.]1"$
+^structured_text_accu_dint_mul$
+^structured_text_transfer	"O0[.]0"$
+^structured_text_nop	0$
+--
+^warning: ignoring
