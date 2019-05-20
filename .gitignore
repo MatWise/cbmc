@@ -84,6 +84,10 @@ src/json/json_lex.yy.cpp
 src/json/json_y.output
 src/json/json_y.tab.cpp
 src/json/json_y.tab.h
+src/structured-text/structured_text_lex.yy.cpp
+src/structured-text/structured_text_y.output
+src/structured-text/structured_text_y.tab.cpp
+src/structured-text/structured_text_y.tab.h
 src/xmllang/xml_lex.yy.cpp
 src/xmllang/xml_y.output
 src/xmllang/xml_y.tab.cpp
