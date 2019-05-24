@@ -12,6 +12,7 @@ Author: Matthias Weiss, matthias.weiss@diffblue.com
 #ifndef CPROVER_STRUCTURED_TEXT_STRUCTURED_TEXT_TYPECHECK_H
 #define CPROVER_STRUCTURED_TEXT_STRUCTURED_TEXT_TYPECHECK_H
 
+#include <util/std_code.h>
 #include <util/symbol_table.h>
 #include <util/typecheck.h>
 
@@ -57,15 +58,42 @@ public:
 
 private:
   structured_text_parse_treet &parse_tree;
-  // std::vector accumulator;
   symbol_tablet &symbol_table;
   const irep_idt module;
 
-  code_typet::parameterst typecheck_fb_params(
+  // Internal state of the PLC program.
+  std::vector<exprt> accumulator;
+  // TODO: Implement status words etc.
+
+  // High level checks
+
+  struct_typet create_instance_data_block(
     const structured_text_parse_treet::function_blockt &function_block);
+  void typecheck_var_decls(
+    const structured_text_parse_treet::var_declarationst &var_decls,
+    struct_union_typet::componentst &components);
   typet typecheck_structured_text_type(const typet &standard_text_type);
-  void typecheck_structured_text_networks(
-    const structured_text_parse_treet::networkst &networks);
+  code_blockt typecheck_structured_text_networks(
+    const structured_text_parse_treet::networkst &networks,
+    const code_typet::parametert &fb_vars);
+  void typecheck_structured_text_instruction(
+    const structured_text_parse_treet::instructiont &instruction,
+    const code_typet::parametert &fb_vars,
+    code_blockt &block);
+
+  // Load and Transfer instructions
+
+  void typecheck_structured_text_load(
+    const codet &op_code,
+    const code_typet::parametert &fb_vars);
+  void typecheck_structured_text_transfer(
+    const codet &op_code,
+    const code_typet::parametert &fb_vars,
+    code_blockt &block);
+
+  // Arithmetic accumulator instructions
+
+  void typecheck_structured_text_accu_int_add();
 };
 
 #endif // CPROVER_STRUCTURED_TEXT_STRUCTURED_TEXT_TYPECHECK_H
